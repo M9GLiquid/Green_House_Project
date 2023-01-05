@@ -77,3 +77,5 @@
 > **Req. 6**: 
 > Create a fast mode that achieves Req. 2 where each 30 minutes are simulated by a second.
 > Purpose: High speed simulation to simplify testing.
+
+@Created by Thomas Lundqvist & Hieu Tran
