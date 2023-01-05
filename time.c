@@ -102,6 +102,7 @@ void update_seconds_on_display(){
   snprintf(string, 3, "%02d", Get_2_Bytes(&TIME_REGISTER, SECONDS));
 	Write_Characters_2_DisplayPosition(string, 38, 0, _VIEW_MENU);
 	Write_Characters_2_DisplayPosition(string, 38, 0, _VIEW_RECORDS);
+	Write_Characters_2_DisplayPosition(string, 38, 0, _VIEW_TEMPERATURE_LIMITS);
 }
 
 /**
@@ -114,6 +115,7 @@ void update_minutes_on_display(){
 	snprintf(string, 3, "%02d", Get_2_Bytes(&TIME_REGISTER, MINUTES));
 	Write_Characters_2_DisplayPosition(string, 35, 0, _VIEW_MENU);
 	Write_Characters_2_DisplayPosition(string, 35, 0, _VIEW_RECORDS);
+	Write_Characters_2_DisplayPosition(string, 35, 0, _VIEW_TEMPERATURE_LIMITS);
 }
 
 /**
@@ -126,6 +128,7 @@ void update_hours_on_display(){
   snprintf(string, 3, "%02d", Get_2_Bytes(&TIME_REGISTER, HOURS));
 	Write_Characters_2_DisplayPosition(string, 32, 0, _VIEW_MENU);
 	Write_Characters_2_DisplayPosition(string, 32, 0, _VIEW_RECORDS);
+	Write_Characters_2_DisplayPosition(string, 32, 0, _VIEW_TEMPERATURE_LIMITS);
 }
 
 /**
@@ -138,6 +141,7 @@ void update_days_on_display(){
 	snprintf(string, 3, "%02d", Get_2_Bytes(&DATE_REGISTER, DAY));
 	Write_Characters_2_DisplayPosition(string, 21, 0, _VIEW_MENU);
 	Write_Characters_2_DisplayPosition(string, 21, 0, _VIEW_RECORDS);
+	Write_Characters_2_DisplayPosition(string, 21, 0, _VIEW_TEMPERATURE_LIMITS);
 }
 
 /**
@@ -150,6 +154,7 @@ void update_months_on_display(){
   snprintf(string, 3, "%02d", Get_2_Bytes(&DATE_REGISTER, MONTH));
 	Write_Characters_2_DisplayPosition(string, 24, 0, _VIEW_MENU);
 	Write_Characters_2_DisplayPosition(string, 24, 0, _VIEW_RECORDS);
+	Write_Characters_2_DisplayPosition(string, 24, 0, _VIEW_TEMPERATURE_LIMITS);
 }
 
 /**
@@ -163,9 +168,11 @@ void update_years_on_display(){
 	snprintf(string, 3, "%02d", Get_2_Bytes(&DATE_REGISTER, MINUTES));
 	Write_Characters_2_DisplayPosition(string, 27, 0, _VIEW_MENU);
 	Write_Characters_2_DisplayPosition(string, 27, 0, _VIEW_RECORDS);
+	Write_Characters_2_DisplayPosition(string, 27, 0, _VIEW_TEMPERATURE_LIMITS);
 	snprintf(string, 3, "%02d", Get_2_Bytes(&DATE_REGISTER, SECONDS));
 	Write_Characters_2_DisplayPosition(string, 29, 0, _VIEW_MENU);
 	Write_Characters_2_DisplayPosition(string, 29, 0, _VIEW_RECORDS);
+	Write_Characters_2_DisplayPosition(string, 29, 0, _VIEW_TEMPERATURE_LIMITS);
 }
 
 /**

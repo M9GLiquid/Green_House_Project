@@ -11,11 +11,11 @@
 	extern short listSize;
 
   //Functions
-  struct Time_Node *create_timeNode(struct Time_Node **time_list, unsigned int timestamp_temp);
-  void disconnect(struct Time_Node **time_list, struct Time_Node *node_element);
-  int isMember(struct Time_Node **time_list, struct Time_Node *node_element);
-  void putFirst(struct Time_Node **time_list, struct Time_Node *node_element);
-  void clearMemory(struct Time_Node **time_list);
+  struct Time_Node *Create_TimeNode(struct Time_Node **time_list, unsigned int timestamp_temp);
+  void Disconnect(struct Time_Node **time_list, struct Time_Node *node_element);
+  int Is_Member(struct Time_Node **time_list, struct Time_Node *node_element);
+  void Put_First(struct Time_Node **time_list, struct Time_Node *node_element);
+  void Clear_Memory(struct Time_Node **time_list);
 
 	// Structs
   typedef struct Time_Node{

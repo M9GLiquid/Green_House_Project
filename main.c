@@ -8,6 +8,8 @@ TimeNode *timeList = NULL;
 unsigned int time = 0;
 unsigned short booleanFlagSet = 0;
 unsigned short TICKS = 1000;
+short minimum_limit = 20; // Minimum temperature limit
+short maximum_limit = 25; // Maximum temperature limit
 
 // Local Variables
 unsigned int darkCounter = 0;
@@ -83,7 +85,7 @@ void update_every_minute(){
 	Set_2_Bytes(&save, Get_2_Bytes(&TIME_REGISTER, MINUTES), MONTH);
 	Set_4_Signed_Bytes(&save, temperature, 1);
 	// Add a new temperature measure to the list
-  putFirst(&timeList, create_timeNode(&timeList, save));
+  Put_First(&timeList, Create_TimeNode(&timeList, save));
 	// Display the sun degree's on display
 	Display_Sundegree_2_Display(darkCounter, sunCounter);	
 	// Set the boolean NEW_MINUTE to false

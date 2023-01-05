@@ -51,7 +51,7 @@ struct Date_Node *Create_DateNode(struct Date_Node **date_list, struct Time_Node
       temp_node = temp_node->next;
 		
 		//Clear all timeNodes in the oldest DateNode.
-    clearMemory(temp_node->time_list); 
+    Clear_Memory(temp_node->time_list); 
 		
 		//Deleting the oldest DateNode.
     Delete(date_list, temp_node); 

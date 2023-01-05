@@ -30,7 +30,7 @@
 	}DateNode;
 		
 	// Global Variables
-	extern DateNode *dateList;
+	extern DateNode *dateList; // The list
 	extern unsigned int max, min; // hhmmTTTT
 	extern int sum;
 #endif	

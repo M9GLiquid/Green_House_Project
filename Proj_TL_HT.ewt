@@ -2968,4 +2968,10 @@
     <file>
         <name>$PROJ_DIR$\view_select_date.h</name>
     </file>
+    <file>
+        <name>$PROJ_DIR$\view_temperature_limits.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\view_temperature_limits.h</name>
+    </file>
 </project>

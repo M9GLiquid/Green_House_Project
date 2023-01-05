@@ -4,7 +4,7 @@ void view_select_date(){
 	// Printing the default Select Date View
 	display_view_start();
 	
-	char string[2] = {0,0};
+	char string[2];
 	char key = 0;
 	char i = 0;
 	

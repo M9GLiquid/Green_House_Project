@@ -6,6 +6,7 @@
 	* 1. View the recorded data
 	* 2. Toggle between Faster Modes [1*|10*|100*|1000*]
 	* 3. Reset the Alarm both LED and Display
+	* 3. Configure Temperature Alarm Limits
   * @return void
 	*/
 void menu_selection(){
@@ -48,10 +49,16 @@ void menu_selection(){
 			Write_Characters_2_DisplayPosition("                    ", 0, 1, _VIEW_SELECT_DATE);
 			Write_Characters_2_DisplayPosition("                    ", 0, 1, _VIEW_MENU);
   		Write_Characters_2_DisplayPosition("DD/MM/YYYY   MIN        AVG   MAX", 0, 1, _VIEW_RECORDS);
+			Write_Characters_2_DisplayPosition("                    ", 0, 1, _VIEW_TEMPERATURE_LIMITS);
   		*AT91C_PIOA_CODR = (AT91C_PIO_PA7);
 			break;
-		// TBD
+		// Configure the temperature limits
 		case 4: 
+			Display_Screen(_VIEW_TEMPERATURE_LIMITS);
+			Display_Configure_Limits();
+ 	 		Write_Characters_2_DisplayPosition("DD/MM/YYYY hh:mm:ss", 21, 0, _VIEW_TEMPERATURE_LIMITS);
+			Init_Counter();
+			Configure_Temperature_Limits();
 			break;
 		// Return to Menu view
 		case 10:
@@ -83,4 +90,5 @@ void display_view_menu(){
   Write_Characters_2_DisplayPosition("1. View recorded data", 2, 7, _VIEW_MENU);
   Write_Characters_2_DisplayPosition("2. Toggle Faster Mode [10*|100*|1000*]", 2, 8, _VIEW_MENU);
   Write_Characters_2_DisplayPosition("3. Reset Alarm", 2, 9, _VIEW_MENU);
+  Write_Characters_2_DisplayPosition("4. Configure Alarm Limits", 2, 9, _VIEW_MENU);
 }

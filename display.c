@@ -22,6 +22,7 @@ void Display_Screen(VIEW view){
 	switch(view){
 		// Display the first screen to the user
 		case _VIEW_SELECT_DATE:
+			// ox[Data 2][Data 1] -> 0x0000 = 0
 			// Data 1
 			Write_Data_2_Display(0x00); 
 			// Data 2
@@ -31,6 +32,7 @@ void Display_Screen(VIEW view){
 			break;
 		// Display the second screen to the user
 		case _VIEW_MENU:
+			// ox[Data 2][Data 1] -> 0x0280 = 640
 			// Data 1
 			Write_Data_2_Display(0x80); 
 			// Data 2
@@ -40,10 +42,20 @@ void Display_Screen(VIEW view){
 			break;
 		// Display the third screen to the user
 		case _VIEW_RECORDS:
+			// ox[Data 2][Data 1] -> 0x0500 = 1280
 			// Data 1
 			Write_Data_2_Display(0x00);
 			// Data 2
 			Write_Data_2_Display(0x05); 
+			// Set Text Home Address OPCODE
+			Write_Command_2_Display(0x40); 
+			break;
+		case _VIEW_TEMPERATURE_LIMITS:
+			// ox[Data 2][Data 1] -> 0x0780 = 1920
+			// Data 1
+			Write_Data_2_Display(0x80);
+			// Data 2
+			Write_Data_2_Display(0x07); 
 			// Set Text Home Address OPCODE
 			Write_Command_2_Display(0x40); 
 			break;
@@ -402,8 +414,8 @@ void Blank_Display() {
   Write_Data_2_Display(0x00);
   Write_Command_2_Display(0x24);
 
-	// 1920 ~ 3 screens/views
-  for (int x = 0; x < 1920; x++) {
+	// 2560 = 4 screens/views
+  for (int x = 0; x < (640 * 4); x++) {
       // Write "nothing" into each "pixel" of the screen
       Write_Data_2_Display(0x00);
       Write_Data_2_Display(0x00);

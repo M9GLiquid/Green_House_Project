@@ -1,6 +1,5 @@
 #include "temperature.h"
 
-
 /**
   * Initialize the pins for Temperature measurements
   * @return void
@@ -100,7 +99,7 @@ short Read_Temp() {
 	// ###
 	
 	// Set TEMP_ALARM flag to true if temperature falls outside the preset intervalls
-  if (temperature > 25 || temperature < 20)
+  if (temperature > maximum_limit || temperature < minimum_limit)
 		Set_Boolean_Flag(1, TEMP_ALARM);
 	
 	// Display current temperature

@@ -655,7 +655,7 @@
             <data>
                 <extensions></extensions>
                 <cmdline></cmdline>
-                <hasPrio>192</hasPrio>
+                <hasPrio>1</hasPrio>
                 <buildSequence>inputOutputBased</buildSequence>
             </data>
         </settings>
@@ -2231,5 +2231,11 @@
     </file>
     <file>
         <name>$PROJ_DIR$\view_select_date.h</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\view_temperature_limits.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\view_temperature_limits.h</name>
     </file>
 </project>

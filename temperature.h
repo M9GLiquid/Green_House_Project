@@ -17,4 +17,7 @@
 	//Handlers
 	void TC0_Handler(void);
 
+	// Global Variables
+	extern short minimum_limit;
+	extern short maximum_limit;
 #endif

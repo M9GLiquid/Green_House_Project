@@ -6,7 +6,7 @@
   * @param node_element: the element to be added
   * @return void
 	*/
-void putFirst(struct Time_Node **time_list, struct Time_Node *node_element){
+void Put_First(struct Time_Node **time_list, struct Time_Node *node_element){
 	// The list is empty and the node_element is the first one
   if(*time_list == NULL){
 		// Start of with the new min/max and add the first to the sum
@@ -28,7 +28,7 @@ void putFirst(struct Time_Node **time_list, struct Time_Node *node_element){
   * @param timestamp_temp: a collection of hhmmTTTT where hh is hour, mm is minute, TTTT is the temperature
   * @return a new TimeNode
 	*/
-struct Time_Node *create_timeNode(struct Time_Node **time_list, unsigned int timestamp_temp) {
+struct Time_Node *Create_TimeNode(struct Time_Node **time_list, unsigned int timestamp_temp) {
 	// Try to allocate memory for the TimeNode
   TimeNode *new_time_node = malloc(sizeof(TimeNode));
 	
@@ -37,7 +37,7 @@ struct Time_Node *create_timeNode(struct Time_Node **time_list, unsigned int tim
 	TimeNode *tempNode = *time_list;
 		while(tempNode->next != NULL)
 			tempNode = tempNode->next;
-    disconnect(time_list, tempNode);
+    Disconnect(time_list, tempNode);
     new_time_node = malloc(sizeof(TimeNode));
   }		
 	
@@ -64,12 +64,12 @@ struct Time_Node *create_timeNode(struct Time_Node **time_list, unsigned int tim
   * @param node_element: node to be removed and freed
   * @return void
 	*/
-void disconnect(struct Time_Node **time_list, struct Time_Node *node_element){
+void Disconnect(struct Time_Node **time_list, struct Time_Node *node_element){
     TimeNode *prevNode = NULL;
     TimeNode *currentNode = *time_list;
 
 		// Check if the element exist's in the list
-    if(isMember(time_list, node_element) == 0)
+    if(Is_Member(time_list, node_element) == 0)
         return;
 
 		// The element is the head of the node and alone in the list, null it and free it
@@ -117,7 +117,7 @@ void disconnect(struct Time_Node **time_list, struct Time_Node *node_element){
   * @param node_element:
   * @return 0 node_element not found, 1 node_element found
 	*/
-int isMember(struct Time_Node **time_list, struct Time_Node *node_element){
+int Is_Member(struct Time_Node **time_list, struct Time_Node *node_element){
     TimeNode *temp = *time_list;
 		
 		// check if we sent in either a empty list or element
@@ -143,7 +143,7 @@ int isMember(struct Time_Node **time_list, struct Time_Node *node_element){
   * @param time_list: List to be freed
   * @return void
 	*/
-void clearMemory(struct Time_Node **time_list) {
+void Clear_Memory(struct Time_Node **time_list) {
 	// Check to see if the list is empty
     if (*time_list == NULL) 
         return;

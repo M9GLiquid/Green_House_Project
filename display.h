@@ -11,7 +11,8 @@
 	typedef enum View{
 		_VIEW_SELECT_DATE = 0,
 		_VIEW_MENU = 1,
-		_VIEW_RECORDS = 2
+		_VIEW_RECORDS = 2,
+		_VIEW_TEMPERATURE_LIMITS = 3
 	}VIEW;
 
 
